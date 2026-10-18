@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fff8f1">
+    <meta name="description" content="A little birthday story made just for Harshita.">
+    <title>A Birthday Story for Harshita</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="sky-specks" aria-hidden="true"></div>
+    <main>
+        <section class="balloon-intro screen" id="balloon-intro" aria-labelledby="balloon-intro-title">
+            <div class="balloon-intro-card">
+                <p class="eyebrow">a little birthday surprise</p>
+                <h1 id="balloon-intro-title">A Little Birthday Surprise</h1>
+                <p class="balloon-intro-hint">Start with the first balloon.</p>
+                <div class="balloon-row" role="group" aria-label="Open the balloons in order">
+                    <button class="intro-balloon balloon-pink" type="button" data-balloon="0" aria-label="Open balloon 1"><span class="balloon-body" aria-hidden="true"><span class="balloon-number">1</span><span class="balloon-highlight"></span><span class="balloon-tether"></span></span></button>
+                    <button class="intro-balloon balloon-lavender" type="button" data-balloon="1" aria-label="Open balloon 2" disabled><span class="balloon-body" aria-hidden="true"><span class="balloon-number">2</span><span class="balloon-highlight"></span><span class="balloon-tether"></span></span></button>
+                    <button class="intro-balloon balloon-blue" type="button" data-balloon="2" aria-label="Open balloon 3" disabled><span class="balloon-body" aria-hidden="true"><span class="balloon-number">3</span><span class="balloon-highlight"></span><span class="balloon-tether"></span></span></button>
+                </div>
+
+            </div>
+        </section>
+        <section class="gate screen is-hidden" id="gate" aria-labelledby="gate-title" inert>
+            <div class="gate-glow" aria-hidden="true"></div>
+            <div class="gate-card">
+                <p class="eyebrow">a tiny birthday secret</p>
+                <div class="envelope" aria-hidden="true"><span>H</span></div>
+                <h1 id="gate-title">The most important<br>date is the code...</h1>
+                <p class="gate-hint">A little number, a very big surprise.</p>
+                <div class="code-hint" id="code-hint" aria-label="Birthday code digits"></div>
+                <form id="code-form" class="code-form">
+                    <label class="sr-only" for="code-entry">Enter the four digit code</label>
+                    <input id="code-entry" name="code" type="password" inputmode="numeric" autocomplete="one-time-code" maxlength="4" placeholder="· · · ·" aria-describedby="code-message" required>
+                    <button class="round-button enter-button" type="submit" aria-label="Open your surprise">↗</button>
+                </form>
+                <div class="keypad" aria-label="Number keypad">
+                    <button type="button" data-digit="1">1</button><button type="button" data-digit="2">2</button><button type="button" data-digit="3">3</button>
+                    <button type="button" data-digit="4">4</button><button type="button" data-digit="5">5</button><button type="button" data-digit="6">6</button>
+                    <button type="button" data-digit="7">7</button><button type="button" data-digit="8">8</button><button type="button" data-digit="9">9</button>
+                    <button type="button" class="keypad-clear" data-action="clear">clear</button><button type="button" data-digit="0">0</button><button type="button" class="keypad-back" data-action="back" aria-label="Delete last digit">⌫</button>
+                </div>
+                <p class="form-message" id="code-message" aria-live="polite">Your secret is hiding in plain sight ✧</p>
+            </div>
+            <span class="float-heart heart-one" aria-hidden="true">♡</span>
+            <span class="float-heart heart-two" aria-hidden="true">✦</span>
+            <span class="float-heart heart-three" aria-hidden="true">♡</span>
+        </section>
+
+        <section class="panda-screen screen is-hidden" id="panda-screen" aria-labelledby="panda-question" inert>
+            <div class="panda-card">
+                <p class="eyebrow">one more little surprise</p>
+                <h1 id="panda-question">Are you excited for the surprise?</h1>
+                <div class="panda-scene">
+                    <div class="panda-character" id="panda-character" role="img" aria-label="A happy panda with sparkling eyes and rosy cheeks" aria-live="polite">
+                        <img class="panda-art panda-art-happy" src="assets/images/panda-happy.png" alt="A smiling panda with sparkling eyes and rosy cheeks" width="1024" height="1024">
+                        <img class="panda-art panda-art-crying" src="assets/images/panda-crying.png" alt="A sad panda with visible tears" width="1024" height="1024">
+                    </div>
+                </div>
+                <div class="panda-actions">
+                    <div class="panda-yes-zone"><button class="panda-choice panda-yes" id="panda-yes" type="button"><span class="panda-button-label">Yes</span></button></div>
+                    <div class="panda-no-zone"><button class="panda-choice panda-no" id="panda-no" type="button"><span class="panda-button-label">No</span></button></div>
+                </div>
+            </div>
+        </section>
+        <section class="birthday screen is-hidden" id="birthday" aria-labelledby="birthday-title" inert>
+            <header class="story-header">
+                <p class="eyebrow">Chapter 1: A Day Made of You</p>
+                <h1 id="birthday-title">Happy birthday, <em id="recipient-name">Harshita</em></h1>
+                <p class="intro">To my best friend, my chosen sister, and one of my favourite people in every universe.</p>
+                <div class="little-stars" aria-hidden="true">✦　·　✧　·　✦</div>
+            </header>
+
+            <section class="cake-section" aria-labelledby="cake-title">
+                <p class="section-kicker">make a little wish</p>
+                <h2 id="cake-title">A cake with your name all over it</h2>
+                <p class="instruction" id="cut-instruction">Slide your finger across the cake to cut it and unlock your surprises!</p>
+                <button class="gesture-fallback" id="cut-cake-button" type="button">Tap here if the swipe does not work</button>
+                <div class="cake-scene">
+                    <div class="cake-wrap" id="cake-wrap" aria-label="Birthday cake with five candles. Swipe across the cake to cut it.">
+                        <img class="cake" id="cake" src="assets/images/chapter1-birthday-cake.png" alt="A whole round ivory birthday cake with blush and lavender frosting on a cream serving plate" width="1254" height="1254" draggable="false">
+                        <div class="candle-row" role="group" aria-label="Five candles arranged around the top of the cake">
+                            <button class="candle" type="button" data-candle="0" aria-label="Blow out candle 1"><span class="flame"></span><span class="wick"></span><span class="candle-stick"></span></button>
+                            <button class="candle" type="button" data-candle="1" aria-label="Blow out candle 2"><span class="flame"></span><span class="wick"></span><span class="candle-stick"></span></button>
+                            <button class="candle" type="button" data-candle="2" aria-label="Blow out candle 3"><span class="flame"></span><span class="wick"></span><span class="candle-stick"></span></button>
+                            <button class="candle" type="button" data-candle="3" aria-label="Blow out candle 4"><span class="flame"></span><span class="wick"></span><span class="candle-stick"></span></button>
+                            <button class="candle" type="button" data-candle="4" aria-label="Blow out candle 5"><span class="flame"></span><span class="wick"></span><span class="candle-stick"></span></button>
+                        </div>
+                        <div class="cake-topper" aria-hidden="true">H<span>✦</span></div>
+                        <span class="cut-line" aria-hidden="true"></span>
+                    </div>
+                    <p class="wish-message" id="wish-message" aria-live="polite">Tap a candle to send a wish your way.</p>
+                </div>
+                <p class="candle-note">No microphone needed; just tap each candle when you’re ready.</p>
+            </section>
+
+            <section class="panda-pair-section is-hidden" id="chapter-pandas" aria-label="Two matching pandas" inert>
+                <div class="panda-pair">
+                    <figure class="panda-pose panda-pose-wave">
+                        <img src="assets/images/panda-wave.png" alt="A matching panda waving hello with one paw raised" width="1254" height="1254" loading="lazy">
+                    </figure>
+                    <figure class="panda-pose panda-pose-banner">
+                        <img src="assets/images/panda-banner.png" alt="A matching panda holding a banner that reads Aanyahh" width="1254" height="1254" loading="lazy">
+                        <span class="panda-banner-text">Aanyahh</span>
+                    </figure>
+                </div>
+            </section>
+
+            <section class="extra-letters is-hidden" id="extra-letters" aria-label="More birthday letters"></section>
+
+            <section class="gift-section" aria-labelledby="gift-title">
+                <p class="section-kicker">chapter two · tied up with love</p>
+                <h2 id="gift-title">A little something, just for you</h2>
+                <p class="instruction" id="gift-instruction">Choose a gift box to open its surprise.</p>
+                <div class="gift-box-grid" id="gift-box-grid" role="group" aria-label="Choose one of three gift boxes">
+                    <div class="gift-box-item">
+                        <div class="gift-wrap">
+                            <button class="gift-illustration" type="button" data-gift-id="gift-1" aria-label="Open gift box 1" aria-haspopup="dialog" aria-controls="gift-video-dialog">
+                                <span class="gift-spark gift-spark-one" aria-hidden="true">✦</span>
+                                <span class="gift-spark gift-spark-two" aria-hidden="true">✧</span>
+                                <span class="gift-bow" aria-hidden="true"><i></i><b></b></span>
+                                <span class="gift-lid" aria-hidden="true"><i></i></span>
+                                <span class="gift-body" aria-hidden="true"><i></i></span>
+                                <span class="gift-tag" aria-hidden="true">for you ♡</span>
+                            </button>
+                        </div>
+                        <span class="gift-box-label">Gift Box 1</span>
+                    </div>
+                    <div class="gift-box-item">
+                        <div class="gift-wrap">
+                            <button class="gift-illustration" type="button" data-gift-id="gift-2" aria-label="Open gift box 2" aria-haspopup="dialog" aria-controls="gift-video-dialog">
+                                <span class="gift-spark gift-spark-one" aria-hidden="true">✦</span>
+                                <span class="gift-spark gift-spark-two" aria-hidden="true">✧</span>
+                                <span class="gift-bow" aria-hidden="true"><i></i><b></b></span>
+                                <span class="gift-lid" aria-hidden="true"><i></i></span>
+                                <span class="gift-body" aria-hidden="true"><i></i></span>
+                                <span class="gift-tag" aria-hidden="true">for you ♡</span>
+                            </button>
+                        </div>
+                        <span class="gift-box-label">Gift Box 2</span>
+                    </div>
+                    <div class="gift-box-item">
+                        <div class="gift-wrap">
+                            <button class="gift-illustration" type="button" data-gift-id="gift-3" aria-label="Open gift box 3" aria-haspopup="dialog" aria-controls="gift-video-dialog">
+                                <span class="gift-spark gift-spark-one" aria-hidden="true">✦</span>
+                                <span class="gift-spark gift-spark-two" aria-hidden="true">✧</span>
+                                <span class="gift-bow" aria-hidden="true"><i></i><b></b></span>
+                                <span class="gift-lid" aria-hidden="true"><i></i></span>
+                                <span class="gift-body" aria-hidden="true"><i></i></span>
+                                <span class="gift-tag" aria-hidden="true">for you ♡</span>
+                            </button>
+                        </div>
+                        <span class="gift-box-label">Gift Box 3</span>
+                    </div>
+                </div>
+                <p class="gift-status" id="gift-status" aria-live="polite">A little magic is waiting inside.</p>
+            </section>
+
+            <div class="surprise-world" id="surprise-world" hidden>
+                <section class="story-module audio-section" id="audio-section" aria-labelledby="audio-title">
+                    <p class="section-kicker">a voice from my heart</p>
+                    <h2 id="audio-title">Little pieces of my voice</h2>
+                    <p class="module-intro">Your music and voice notes stay on this device. Nothing plays until you press play.</p>
+                    <h3 class="soundtracks-heading">Three Soundtracks</h3>
+                    <div class="soundtrack-list" id="soundtrack-list" aria-label="Three soundtracks">
+                        <article class="soundtrack-card">
+                            <div class="music-disc" aria-hidden="true">♫</div>
+                            <div class="soundtrack-copy">
+                                <h3>My Spotify Premium</h3>
+                                <p class="soundtrack-status" aria-live="polite">Ready when you are.</p>
+                            </div>
+                            <audio class="soundtrack-player" controls preload="metadata" data-popup="none" aria-label="Play My Spotify Premium">
+                                <source src="assets/Audio/audio 1.mp4" type="audio/mp4">
+                            </audio>
+                            <p class="soundtrack-time"><span data-elapsed>0:00</span> / <span data-duration>--:--</span></p>
+                        </article>
+                        <article class="soundtrack-card">
+                            <div class="music-disc" aria-hidden="true">♫</div>
+                            <div class="soundtrack-copy">
+                                <h3>Thodi Der</h3>
+                                <p class="soundtrack-status" aria-live="polite">Ready when you are.</p>
+                            </div>
+                            <audio class="soundtrack-player" controls preload="metadata" data-popup="message" aria-label="Play Thodi Der">
+                                <source src="assets/Audio/audio2.mp3" type="audio/mpeg">
+                            </audio>
+                            <p class="soundtrack-time"><span data-elapsed>0:00</span> / <span data-duration>--:--</span></p>
+                        </article>
+                        <article class="soundtrack-card">
+                            <div class="music-disc" aria-hidden="true">♫</div>
+                            <div class="soundtrack-copy">
+                                <h3>Darkhaast</h3>
+                                <p class="soundtrack-status" aria-live="polite">Ready when you are.</p>
+                            </div>
+                            <audio class="soundtrack-player" controls preload="metadata" data-popup="message" aria-label="Play Darkhaast">
+                                <source src="assets/Audio/audio3.mp3" type="audio/mpeg">
+                            </audio>
+                            <p class="soundtrack-time"><span data-elapsed>0:00</span> / <span data-duration>--:--</span></p>
+                        </article>
+                    </div>
+
+                    <section class="birthday-letter-section" aria-labelledby="birthday-letter-section-title">
+                        <p class="section-kicker">a note from the heart</p>
+                        <h3 id="birthday-letter-section-title">A LITTLE LETTER FOR YOU</h3>
+                        <p class="birthday-letter-intro">A little note, written just for you.</p>
+                        <div class="birthday-envelope" id="birthday-envelope" aria-hidden="true">
+                            <span class="birthday-envelope-letter"></span>
+                            <span class="birthday-envelope-body"></span>
+                            <span class="birthday-envelope-flap"></span>
+                            <span class="birthday-envelope-sparkles">✦　·　✧</span>
+                        </div>
+                        <button class="birthday-letter-reveal" id="birthday-letter-reveal" type="button" aria-haspopup="dialog" aria-controls="birthday-letter-dialog">Reveal the Letter 💌</button>
+                    </section>
+                    <div class="voice-list" id="voice-list"></div>
+                    <p class="storage-note" id="storage-note" aria-live="polite">Media is saved only in this browser when storage is available.</p>
+                </section>
+
+                <section class="story-module gallery-section" id="gallery-section" aria-labelledby="gallery-title">
+                    <h2 id="gallery-title">OUR LITTLE TIME CAPSULE</h2>
+                    <p class="gallery-subtitle">The Days I Want to Keep</p>
+                    <p class="module-intro">Open any photo to see it up close.</p>
+                    <div class="gallery-grid" id="gallery-grid"></div>
+                </section>
+
+                <section class="story-module map-section" id="map-section" aria-labelledby="map-title">
+                    <p class="section-kicker">Chapter 3: All the Places That Became Us</p>
+                    <h2 id="map-title">Our Little World of Memories</h2>
+                    <p class="module-intro">Tap a star to visit a favorite place.</p>
+                    <div class="map-layout">
+                        <div class="storybook-map" aria-label="Illustrated map of memory locations">
+                            <svg class="map-river" viewBox="0 0 700 380" preserveAspectRatio="none" aria-hidden="true"><path d="M-20 280 C110 230 60 100 220 110 S380 250 460 170 590 50 740 105"/><path d="M-20 294 C110 244 60 114 220 124 S380 264 460 184 590 64 740 119"/></svg>
+                            <div class="map-marker-layer" id="map-marker-layer"></div>
+                            <span class="map-label map-label-one" aria-hidden="true">the long way home</span>
+                            <span class="map-label map-label-two" aria-hidden="true">our favourite corner</span>
+                            <span class="map-compass" aria-hidden="true">N<br>✦</span>
+                        </div>
+                    </div>
+                    <div class="map-photo-grid" id="map-photo-grid" aria-label="Place photographs" hidden></div>
+                </section>
+
+                <section class="story-module quiz-section" id="quiz-section" aria-labelledby="quiz-intro-title">
+                    <div class="quiz-panel quiz-game-intro" id="quiz-game-intro">
+                        <p class="section-kicker">a little game for us</p>
+                        <h2 id="quiz-intro-title">One More Little Adventure — Let's Play a Game!</h2>
+                        <button class="quiz-button" id="quiz-start" type="button">Continue</button>
+                    </div>
+                    <div class="quiz-panel" id="quiz-question-panel" aria-labelledby="quiz-question-heading" hidden>
+                        <p class="quiz-progress" id="quiz-progress" aria-live="polite">Question 1 of 5</p>
+                        <h3 id="quiz-question-heading"></h3>
+                        <p class="quiz-question-text" id="quiz-question-text"></p>
+                        <fieldset class="quiz-answer-group">
+                            <legend class="sr-only">Choose one answer</legend>
+                            <div class="quiz-answer-list" id="quiz-answer-list"></div>
+                        </fieldset>
+                        <form class="quiz-custom-answer" id="quiz-custom-answer-form" hidden>
+                            <label for="quiz-custom-answer-input">Your answer</label>
+                            <textarea id="quiz-custom-answer-input" rows="3" autocomplete="off"></textarea>
+                            <p class="quiz-local-notice">Your answer stays in this browser for this quiz session. It is not sent anywhere.</p>
+                            <button class="quiz-button" id="quiz-custom-answer-submit" type="submit" disabled>Submit Answer and Show Snap</button>
+                        </form>
+                        <button class="quiz-button quiz-replay" id="quiz-replay-video" type="button" hidden>Watch the Snap Again</button>
+                    </div>
+                    <div class="quiz-panel" id="quiz-video-panel" aria-labelledby="quiz-video-heading" hidden>
+                        <p class="quiz-progress" id="quiz-video-progress">Question 1 of 5</p>
+                        <h3 id="quiz-video-heading">A little video surprise</h3>
+                        <video class="quiz-video" id="quiz-video" controls playsinline preload="none" aria-label="Quiz answer video" hidden></video>
+                        <p class="quiz-video-message" id="quiz-video-message" role="status" aria-live="polite" hidden></p>
+                        <div class="quiz-video-actions">
+                            <button class="quiz-secondary-button" id="quiz-video-close" type="button">Back to Question</button>
+                            <button class="quiz-button" id="quiz-video-continue" type="button">Continue</button>
+                        </div>
+                    </div>
+                    <div class="quiz-panel quiz-complete-panel" id="quiz-complete-panel" aria-labelledby="quiz-complete-heading" hidden>
+                        <p class="section-kicker">✧ adventure complete ✧</p>
+                        <h3 id="quiz-complete-heading">Adventure Complete</h3>
+                    </div>
+                </section>
+
+                <section class="story-module surprises-section" id="surprises-section" aria-labelledby="surprises-title">
+                    <p class="section-kicker">The Tiny Things That Say I Believe in You</p>
+                    <h2 id="surprises-title">A few more little surprises</h2>
+                    <p class="module-intro">Every envelope has a note. Add, remove, or rearrange them in the surprise list in script.js.</p>
+                    <div class="surprise-grid" id="surprise-grid"></div>
+                    <button class="finalize-button" type="button" aria-haspopup="dialog" aria-controls="final-audio-dialog">Let's Finalize It</button>
+                </section>
+            </div>
+
+            <footer class="story-footer"><span>made with all my love</span><span>✧</span><span id="footer-name">for Harshita</span></footer>
+        </section>
+    </main>
+
+    <dialog class="letter-dialog" id="letter-dialog" aria-labelledby="letter-title">
+        <button class="dialog-close" type="button" aria-label="Close letter">×</button>
+        <article class="letter-paper">
+            <div class="paper-ornament" aria-hidden="true">❧　✦　❧</div>
+            <p class="letter-label">a little letter for you</p>
+            <h2 id="letter-title">Dear Harshita,</h2>
+            <p class="letter-body" id="letter-body"></p>
+            <div class="chapter-letter-actions" id="chapter-letter-actions" hidden><button class="chapter-letter-next" id="chapter-letter-next" type="button">Continue</button></div>
+            <div class="balloon-dialog-actions" id="balloon-dialog-actions" hidden>
+                <button class="balloon-message-next" id="balloon-next-message" type="button">Next</button>
+                <div class="balloon-cancel-zone">
+                    <button class="balloon-evasive-cancel" type="button">Cancel</button>
+                </div>
+            </div>
+            <p class="letter-signoff">Always your person, <span>♡</span></p>
+            <div class="paper-ornament bottom-ornament" aria-hidden="true">❧　✦　❧</div>
+        </article>
+    </dialog>
+
+    <dialog class="media-dialog" id="lightbox-dialog" aria-labelledby="lightbox-title">
+        <button class="dialog-close" type="button" aria-label="Close photograph">×</button>
+        <figure class="lightbox-figure"><div class="lightbox-placeholder" id="lightbox-placeholder" aria-hidden="true">✿</div><img id="lightbox-image" alt=""><figcaption><strong id="lightbox-title"></strong><span id="lightbox-caption"></span><span id="lightbox-meta"></span><p id="lightbox-description"></p></figcaption></figure>
+    </dialog>
+
+    <dialog class="media-dialog surprise-dialog" id="surprise-dialog" aria-labelledby="surprise-dialog-title">
+        <button class="dialog-close" type="button" aria-label="Close surprise">×</button>
+        <article class="surprise-paper"><div class="paper-ornament" aria-hidden="true">❧　✦　❧</div><p class="letter-label">a hidden little surprise</p><h2 id="surprise-dialog-title"></h2><div id="surprise-dialog-body"></div><div class="paper-ornament bottom-ornament" aria-hidden="true">❧　✦　❧</div></article>
+    </dialog>
+    <dialog class="media-dialog gift-video-dialog" id="gift-video-dialog" aria-labelledby="gift-video-title">
+        <button class="dialog-close" type="button" aria-label="Close gift video">×</button>
+        <div class="gift-video-content">
+            <p class="section-kicker">a little surprise for you</p>
+            <h2 id="gift-video-title">Gift Box</h2>
+            <video id="gift-video" controls playsinline preload="metadata" aria-label="Gift video"></video>
+            <p class="gift-video-status" id="gift-video-status" role="status" aria-live="polite" hidden></p>
+            <div class="gift-video-actions">
+                <button class="gift-video-continue" id="gift-video-continue" type="button" disabled>Continue</button>
+            </div>
+        </div>
+    </dialog>
+    <dialog class="media-dialog soundtrack-dialog" id="soundtrack-dialog" aria-label="Song reminder">
+        <button class="dialog-close" type="button" aria-label="Close song message">×</button>
+        <article class="soundtrack-message-paper">
+            <p class="soundtrack-message">Whenever this line plays of the song, it somehow always reminds me of you, of your voice. It always reminds me of losing my own lifetime Spotify Premium.</p>
+        </article>
+    </dialog>
+
+    <dialog class="birthday-letter-dialog" id="birthday-letter-dialog" aria-labelledby="birthday-letter-title">
+        <button class="birthday-letter-close" id="birthday-letter-close" type="button" aria-label="Close birthday letter">×</button>
+        <article class="birthday-letter-paper">
+            <div class="birthday-letter-sparkles" aria-hidden="true">✧　·　✦　·　✧</div>
+            <h2 id="birthday-letter-title">HAPPY BIRTHDAY TO MY LOVELY SISTER</h2>
+            <div class="birthday-letter-copy">
+                <p>It's a very special day for a special person like you so it cannot be just a basic ordinary birthday story the wish should also be special and something which you like 🥰</p>
+                <p>I hope you are doing well and happy with your life 🧿 , I took some of your snaps to make this so sorry for that 🥺👉🏻👈🏻</p>
+                <p>Last year birthday par ek poetry likhi thi jo kuch aesi thi na</p>
+                <p>Kuch mahino ki jaan-pehchaan ne aisa rishta banaya,<br>Jaise barson ka saath ho, Khuda ne khud milaya.<br>Aapki baatein dil ko sukoon de jaati hain,<br>Aapki hansi har dard bhula jaati hai.</p>
+                <p>Kabhi dost bankar hasa ke mera dard bhulati ho,<br>Toh kabhi behen si daant lagati ho.<br>Aapki fikr mein wo sukoon hai jo duniya de na paayi,<br>Aapki maujoodgi se har udaasi muskuraayi.</p>
+                <p>Aapka saath mere liye kisi dua se kam nahi,<br>Apke jaisa dost is zamaane mein har kisi ko milta nahi.</p>
+                <p>Bas itni tamanna hai meri,<br>Har subah hansi se shuru ho zindagi aapki.<br>Aapke har sapne haqeeqat mein badal jaayein,<br>Aur dil hamesha aise<br>hi khil jaaye. 🎂🎂🎂</p>
+            </div>
+            <div class="birthday-letter-sparkles birthday-letter-sparkles-bottom" aria-hidden="true">✧　·　✦　·　✧</div>
+        </article>
+    </dialog>
+
+    <dialog class="final-audio-dialog" id="final-audio-dialog" aria-labelledby="final-audio-title">
+        <button class="dialog-close" type="button" aria-label="Close final audio message">×</button>
+        <section class="final-audio-card">
+            <p class="section-kicker">one last little message</p>
+            <h2 id="final-audio-title">One Last Little Message</h2>
+            <audio id="final-audio" preload="none"><source src="assets/Audio/finalnote.m4a" type="audio/mp4"></audio>
+            <p class="final-audio-status" id="final-audio-status" role="status" aria-live="polite">Ready when you are.</p>
+            <div class="final-audio-controls">
+                <button class="quiz-button final-audio-toggle" id="final-audio-toggle" type="button">Play</button>
+                <label class="sr-only" for="final-audio-progress">Seek through the final audio message</label>
+                <input id="final-audio-progress" class="final-audio-progress" type="range" min="0" max="0" step="0.1" value="0" disabled>
+                <p class="final-audio-time"><span id="final-audio-elapsed">0:00</span><span aria-hidden="true"> / </span><span id="final-audio-duration">--:--</span></p>
+            </div>
+        </section>
+    </dialog>
+    <div class="final-confetti-layer" id="final-confetti" aria-hidden="true" hidden></div>
+    <section class="final-birthday-screen" id="final-birthday-screen" aria-labelledby="final-birthday-heading" hidden>
+        <h1 id="final-birthday-heading" tabindex="-1">Wish you a very happy birthday, Malkin&nbsp;<span class="final-crown">👑️</span></h1>
+    </section>
+</body>
+</html>
